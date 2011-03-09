@@ -45,7 +45,8 @@ void QJSnap::savesnap() {
     mainFrame->render(&painter);
     painter.end();
 
-    QString mOutput = "/home/thankwsx/QJSnap/newsqq.jpg";
+    //QString mOutput = "/home/thankwsx/QJSnap/newsqq.jpg";
+    QString mOutput = "j:\\project\\QJSnap\\newsqq.jpg";
     qDebug() << image.save( mOutput );
     image.save( mOutput);
 
@@ -56,5 +57,6 @@ void QJSnap::savesnap() {
     painter.begin(&qq_1);
     eleNode.render(&painter);
     painter.end();
-    qq_1.save( QString("/home/thankwsx/QJSnap/News_Width1.jpg"));
+    //qq_1.save( QString("/home/thankwsx/QJSnap/News_Width1.jpg"));
+    qq_1.save( QString("j:\\project\\QJSnap\\News_Width1.jpg"));
 }

@@ -14,5 +14,3 @@ SOURCES += main.cpp\
         qjsnap.cpp
 
 HEADERS  += qjsnap.h
-
-FORMS    += qjsnap.ui
