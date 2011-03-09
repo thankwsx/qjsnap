@@ -24,18 +24,10 @@ int main(int argc, char *argv[])
     QNetworkProxy proxy = QNetworkProxy(QNetworkProxy::HttpProxy,p.host(), p.port(80), p.userName(), p.password());
     manager.setProxy(proxy);
     page.setNetworkAccessManager(&manager);
-    /*
-    qDebug() << p.host();
-    qDebug() << p.port();
-    qDebug() << p.userName();
-    qDebug() << p.password();
-    */
     QJSnap w(&page , &widget);
     a.connect( &page,SIGNAL(loadFinished(bool)),&w ,SLOT( qrender(bool)) );
     a.connect( page.mainFrame(),   SIGNAL(initialLayoutCompleted()), &w,  SLOT(InitialLayoutCompleted()));
-    //page->mainFrame()->setScrollBarPolicy(Qt::Horizontal, Qt::ScrollBarAlwaysOff);
-    //page->mainFrame()->setScrollBarPolicy(Qt::Vertical, Qt::ScrollBarAlwaysOff);
-    //page.mainFrame()->load(req,QNetworkAccessManager::GetOperation);
-    page.mainFrame()->load(QUrl("http://news.qq.com"));
+    QUrl surl("http://news.qq.com/a/20110309/000616.htm");
+    page.mainFrame()->load(surl);
     return a.exec();
 }

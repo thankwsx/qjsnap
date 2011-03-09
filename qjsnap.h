@@ -15,6 +15,7 @@ public:
 private slots:
     void qrender(bool ok);  //page loadFinished 事件触发
     void InitialLayoutCompleted();  //page initialLayoutCompleted
+    void realCapture();
 private:
     void TryDelayedRender();
     void savesnap();    //保存截图
